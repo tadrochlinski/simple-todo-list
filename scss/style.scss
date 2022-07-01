@@ -107,7 +107,7 @@ body{
     
     &--checked{
         background: $text;
-        border: 0;
+        border: 2px solid $text;
         color: white;
     }
 
@@ -180,7 +180,7 @@ body{
 
 .footer{
     position: absolute;
-    bottom: 0;
+    bottom: 0;display:none;
 
     &__link{
         color: #0094FF;

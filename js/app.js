@@ -56,14 +56,14 @@ todoList.addEventListener('click' , (e) =>{
     if(item.classList[0] === 'todo__completed-btn'){
         const todo = item.parentElement.parentElement;
         const button = item;
-        button.classList.add('todo__completed-btn--checked');
-        todo.classList.add('todo--checked');
+        button.classList.toggle('todo__completed-btn--checked');
+        todo.classList.toggle('todo--checked');
     }
 
     if(item.classList[2] === 'check'){
         const todo = item.parentElement.parentElement.parentElement;
         const button = item.parentElement;
-        button.classList.add('todo__completed-btn--checked');
-        todo.classList.add('todo--checked');
+        button.classList.toggle('todo__completed-btn--checked');
+        todo.classList.toggle('todo--checked');
     }
 })

@@ -122,7 +122,7 @@ body {
 
 .todo--checked {
   background: #404756;
-  border: 0;
+  border: 2px solid #404756;
   color: white;
 }
 
@@ -207,6 +207,7 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
+  display: none;
 }
 
 .footer__link {
