@@ -21,38 +21,42 @@
 
     <div id="app">
        <header class="header">
-           <h1 class="header__title">
+            <h1 class="header__title">
                simple to-do 📒
-           </h1>
-       </header> 
+            </h1>
+        </header> 
 
-       <main class="content">
-           <form class="add-todo">
+        <main class="content">
+            <form class="add-todo">
                <input type="text"
                 class="add-todo__input">
                 <button type="submit" class="add-todo__submit"><i class="fa-solid fa-plus"></i></button>
-           </form>
+            </form>
 
-           <ul class="todos">
-               <h2 class="todos__empty">
-                   nothing here yet . . . 😔
-               </h2>
-               
-               <li class="todo">
-                   <span class="todo__text">todo text</span>
-                   <button class="todo__completed-btn">
-                    <i class="fa-solid fa-check"></i>
-                    </button>
-                   <button class="todo__delete-btn">
-                       <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-               </li>
-           </ul>
-       </main>
+            <h2 class="empty">
+            nothing to do . . . 😔
+            </h2>
 
-       <footer class="footer">
-           <div class="footer__p">created by <a href="#" class="footer__link">tadrochlinski</a></div>
-       </footer>
+            <ul class="todos">
+                <!-- <li class="todo">
+                    <span class="todo__text" contenteditable="true">
+                        new todo
+                    </span>
+                    <div class="todo__buttons">
+                        <button class="todo__completed-btn">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                        <button       class="todo__delete-btn">
+                           <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </li> -->
+            </ul>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__p">created by <a href="#"                    class="footer__link">tadrochlinski</a></div>
+        </footer>
     </div>
 
     
