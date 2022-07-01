@@ -14,4 +14,20 @@ body {
   display: grid;
   place-items: center;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer__link {
+  color: #0094FF;
+  text-decoration: none;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.footer__link:hover {
+  color: #0083EE;
+}
 /*# sourceMappingURL=style.css.map */

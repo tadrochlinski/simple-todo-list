@@ -1,3 +1,6 @@
+$main: #0094FF;
+$main-darker: #0083EE;
+
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +17,19 @@ body{
 }
 
 #main{
-    
+
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+
+    &__link{
+        color: #0094FF;
+        text-decoration: none;
+        transition: color 200ms ease-in-out;
+
+        &:hover{ color: #0083EE }
+    }
 }
 
