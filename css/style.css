@@ -55,6 +55,7 @@ body {
 }
 
 .add-todo__input {
+  color: #404756;
   height: 35px;
   border-radius: 5px;
   border: 2px solid #E0F1FF;
