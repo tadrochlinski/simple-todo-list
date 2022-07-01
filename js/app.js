@@ -4,7 +4,6 @@ const emptyStateDiv = document.querySelector('.empty')
 const todoList = document.querySelector('.todos');
 const checkedBtn = document.querySelector('.todo__completed-btn');
 
-
 let todoCounter = 0;
 
 const todoElement = (text) =>{
@@ -14,10 +13,10 @@ const todoElement = (text) =>{
         </span>
         <div class="todo__buttons">
             <button class="todo__completed-btn">
-                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-check check"></i>
             </button>
             <button class="todo__delete-btn">
-                <i class="fa fa-trash" aria-hidden="true"></i>
+                <i class="fa fa-trash trash" aria-hidden="true"></i>
             </button>
         </div>
 `
@@ -29,7 +28,6 @@ const createTodo = (text) =>{
     todo.classList.add('todo');
     todoList.appendChild(todo);
 }
-
 
 
 todoForm.addEventListener('submit', (e) =>{
@@ -50,3 +48,22 @@ todoForm.addEventListener('submit', (e) =>{
         createTodo(inputText);
     } 
 });
+
+
+todoList.addEventListener('click' , (e) =>{
+    const item = e.target;
+
+    if(item.classList[0] === 'todo__completed-btn'){
+        const todo = item.parentElement.parentElement;
+        const button = item;
+        button.classList.add('todo__completed-btn--checked');
+        todo.classList.add('todo--checked');
+    }
+
+    if(item.classList[2] === 'check'){
+        const todo = item.parentElement.parentElement.parentElement;
+        const button = item.parentElement;
+        button.classList.add('todo__completed-btn--checked');
+        todo.classList.add('todo--checked');
+    }
+})
