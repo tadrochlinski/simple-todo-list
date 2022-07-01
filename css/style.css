@@ -13,6 +13,65 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  color: #404756;
+}
+
+#app {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__title {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #404756;
+}
+
+.add-todo__submit {
+  background-color: #0094FF;
+  border: 0;
+  width: 35px;
+  height: 35px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.add-todo__submit:hover {
+  background-color: #0083EE;
+  cursor: pointer;
+}
+
+.add-todo__input {
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #E0F1FF;
+  text-align: center;
+  -webkit-transition: 300ms outline ease-in-out;
+  transition: 300ms outline ease-in-out;
+  -webkit-transition: 300ms border ease-in-out;
+  transition: 300ms border ease-in-out;
+}
+
+.add-todo__input:focus {
+  outline: 1px solid #0094FF;
+  border: 2px solid #0094FF;
+}
+
+.add-todo__input:hover {
+  border: 2px solid #0094FF;
 }
 
 .footer {

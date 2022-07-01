@@ -30,7 +30,7 @@
            <form class="add-todo">
                <input type="text"
                 class="add-todo__input">
-                <button type="submit" class="add-todo__submit">Add</button>
+                <button type="submit" class="add-todo__submit"><i class="fa-solid fa-plus"></i></button>
            </form>
 
            <ul class="todos">
@@ -40,6 +40,9 @@
                
                <li class="todo">
                    <span class="todo__text">todo text</span>
+                   <button class="todo__completed-btn">
+                    <i class="fa-solid fa-check"></i>
+                    </button>
                    <button class="todo__delete-btn">
                        <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
@@ -51,6 +54,7 @@
            <div class="footer__p">created by <a href="#" class="footer__link">tadrochlinski</a></div>
        </footer>
     </div>
+
     
     <!-- script -->
     <script src="js/app.js"></script>

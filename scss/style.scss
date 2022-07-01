@@ -1,5 +1,8 @@
 $main: #0094FF;
 $main-darker: #0083EE;
+$grey: #E0F1FF;
+$dark-grey: #40608F;
+$text: #404756;
 
 *{
     margin: 0;
@@ -14,10 +17,60 @@ body{
     height: 100vh;
     display: grid;
     place-items: center;
+    color: $text;
 }
 
-#main{
+#app{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.header{
+    &__title{
+        font-size: 2rem;
+        letter-spacing: 1px;
+        color: #404756;
+    }
+}
+
+.add-todo{
+    &__submit{
+        background-color: $main;
+        border: 0;
+        width: 35px;
+        height: 35px;
+        
+        font-size: 1rem;
+        color: white;
+        font-weight: 700;
+        border-radius: 5px;
+        transition: 300ms ease-in-out;
+
+        &:hover{
+            background-color:$main-darker;
+            cursor: pointer;
+        }
+    }
+
+    &__input{
+        height: 35px;
+        border-radius: 5px;
+        border: 2px solid $grey;
+        text-align: center;
+        transition: 300ms outline ease-in-out;
+        transition: 300ms border ease-in-out;
+
+        &:focus{
+            outline: 1px solid $main;
+            border: 2px solid $main;
+        }
+
+        &:hover{
+            border: 2px solid $main;
+        }
+    }
 }
 
 .footer{
