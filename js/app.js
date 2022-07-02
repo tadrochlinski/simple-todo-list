@@ -2,7 +2,6 @@ const todoForm = document.querySelector('.add-todo');
 const todoInput = document.querySelector('.add-todo__input');
 const emptyStateDiv = document.querySelector('.empty')
 const todoList = document.querySelector('.todos');
-const checkedBtn = document.querySelector('.todo__completed-btn');
 
 let todoCounter = 0;
 
@@ -49,21 +48,16 @@ todoForm.addEventListener('submit', (e) =>{
     } 
 });
 
+const handleCompleting = (item) =>{
+    todo = item.closest('li.todo');
+    completedBtn = item.closest('button');
+    todo.classList.toggle('todo--checked');
+    completedBtn.classList.toggle('todo__completed-btn--checked');
+}
 
 todoList.addEventListener('click' , (e) =>{
     const item = e.target;
 
-    if(item.classList[0] === 'todo__completed-btn'){
-        const todo = item.parentElement.parentElement;
-        const button = item;
-        button.classList.toggle('todo__completed-btn--checked');
-        todo.classList.toggle('todo--checked');
-    }
-
-    if(item.classList[2] === 'check'){
-        const todo = item.parentElement.parentElement.parentElement;
-        const button = item.parentElement;
-        button.classList.toggle('todo__completed-btn--checked');
-        todo.classList.toggle('todo--checked');
-    }
+    if(item.classList[2] === 'check' || item.classList[0] === 'todo__completed-btn')
+        handleCompleting(item);
 })
