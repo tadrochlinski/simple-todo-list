@@ -26,6 +26,8 @@ const createTodo = (text) =>{
     todo.innerHTML = todoElement(text);
     todo.classList.add('todo');
     todoList.appendChild(todo);
+    todo.style.opacity = '1';
+    
 }
 
 
@@ -48,16 +50,31 @@ todoForm.addEventListener('submit', (e) =>{
     } 
 });
 
-const handleCompleting = (item) =>{
+const handleButtons = (item, action) =>{
     todo = item.closest('li.todo');
-    completedBtn = item.closest('button');
-    todo.classList.toggle('todo--checked');
-    completedBtn.classList.toggle('todo__completed-btn--checked');
+
+    if(action === 'complete'){
+        completedBtn = item.closest('button');
+        todo.classList.toggle('todo--checked');
+        completedBtn.classList.toggle('todo__completed-btn--checked');
+    }
+
+    if(action === 'delete'){ 
+        todo.remove(); 
+        todoCounter--;
+
+        if(todoCounter === 0)
+            emptyStateDiv.style.display = 'block';
+    }      
 }
+
 
 todoList.addEventListener('click' , (e) =>{
     const item = e.target;
 
-    if(item.classList[2] === 'check' || item.classList[0] === 'todo__completed-btn')
-        handleCompleting(item);
+    if(item.classList[0] === 'todo__completed-btn')
+        handleButtons(item, 'complete');
+
+        if(item.classList[0] === 'todo__delete-btn')
+        handleButtons(item, 'delete');
 })
