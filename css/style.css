@@ -161,7 +161,7 @@ body {
           justify-content: space-between;
 }
 
-.todo__delete-btn, .todo__completed-btn {
+.todo__delete-btn, .todo__check-btn {
   border: 0;
   width: 25px;
   height: 25px;
@@ -186,27 +186,27 @@ body {
           transform: scale(0.9);
 }
 
-.todo__completed-btn {
+.todo__check-btn {
   background: #E0F1FF;
   color: white;
 }
 
-.todo__completed-btn:hover {
+.todo__check-btn:hover {
   background-color: #73FAC9;
   cursor: pointer;
 }
 
-.todo__completed-btn:active {
+.todo__check-btn:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.todo__completed-btn--checked {
+.todo__check-btn--checked {
   background-color: white;
   color: #404756;
 }
 
-.todo__completed-btn--checked:hover {
+.todo__check-btn--checked:hover {
   background-color: #404756;
   color: white;
 }
