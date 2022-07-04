@@ -28,10 +28,6 @@ window.onload = () =>{
     if(localStorage.length > 0){
         //refresh todo output
         refreshOutput();
-
-        todos.forEach(element =>{
-            console.log(element);
-        });
     }
 }
 
@@ -65,9 +61,28 @@ todoListDiv.addEventListener('click', (e) =>{
         //removing todo 
         removeTodo(todoDiv);
     }
+
+    //checking if clicked element is check todo button
+    if(clickedElement.classList[0] === 'todo__check-btn'){
+        const todoDiv = clickedElement.closest('li');
+        checkTodo(todoDiv);
+    }
 });
 
 //functions
+const checkTodo = (todoDiv) =>{
+    const todoDivId = todoDiv.id;
+
+    todos.forEach((todo)=>{
+        const todoId = todo.id;
+        if(todoId == todoDivId){
+            (todo.checked) ? todo.checked = false : todo.checked = true;
+            localStorage.setItem('todos', JSON.stringify(todos));
+            refreshOutput();
+        }
+    });
+}
+
 const removeTodo = (todoDiv) =>{
     //saving todo div id into variable
     const todoDivId = todoDiv.id;
