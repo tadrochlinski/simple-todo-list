@@ -9,7 +9,8 @@
 body {
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -134,17 +135,8 @@ body {
 }
 
 .todo__text {
-  max-width: 125px;
-  -webkit-transition: -webkit-transform 200ms ease-in-out;
-  transition: -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-}
-
-.todo__text:focus {
-  outline: none;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  width: 120px;
+  overflow-wrap: break-word;
 }
 
 .todo__buttons {
@@ -167,8 +159,6 @@ body {
   height: 25px;
   font-size: 5px;
   border-radius: 5px;
-  -webkit-transition: 200ms background ease-in-out;
-  transition: 200ms background ease-in-out;
 }
 
 .todo__delete-btn {
@@ -181,11 +171,6 @@ body {
   cursor: pointer;
 }
 
-.todo__delete-btn:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
 .todo__check-btn {
   background: #E0F1FF;
   color: white;
@@ -194,11 +179,6 @@ body {
 .todo__check-btn:hover {
   background-color: #73FAC9;
   cursor: pointer;
-}
-
-.todo__check-btn:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
 }
 
 .todo__check-btn--checked {
@@ -218,7 +198,6 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  display: none;
 }
 
 .footer__link {

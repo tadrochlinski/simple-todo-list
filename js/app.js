@@ -3,6 +3,7 @@ const todoInput = document.querySelector('.add-todo__input');
 const emptyStateDiv = document.querySelector('.empty')
 const todoListDiv = document.querySelector('.todos');
 
+
 const todoElement = (content) =>{
     return `
         <div class="todo__text">
@@ -41,8 +42,19 @@ todoForm.addEventListener('submit', (e) =>{
         const inpText = todoInput.value;
         //clear input
         todoInput.value = '';
+
+        //if todos tab is empty, then new div is going to have id equal to 1
+        let newTodoId = 1;
+
+        //if todos tab isn't empty, new div is going to get never used id;
+        if(todos.length > 0){
+            const existingIndexes = [];
+            todos.forEach(todo => existingIndexes.push(todo.id))
+            newTodoId = Math.max(...existingIndexes) + 1;
+        }
+
         //add todo object to todos tab
-        todos.push({id: todos.length + 1, content: inpText, checked: false});
+        todos.push({id: newTodoId, content: inpText, checked: false});
         //save todos tab in localStorage
         localStorage.setItem('todos', JSON.stringify(todos));
         //refresh output div
@@ -105,7 +117,6 @@ const removeTodo = (todoDiv) =>{
 }
 
 const refreshOutput = () =>{
-
     //cleaning output
     todoListDiv.innerHTML = '';
     //uptading todos tab
@@ -118,7 +129,7 @@ const refreshOutput = () =>{
     });
 }
 
-const createTodoDiv = (id, content, checked) =>{
+const createTodoDiv = ( id, content, checked) =>{
     //create todo element
     const todo = document.createElement('li');
     //set the structure of element
