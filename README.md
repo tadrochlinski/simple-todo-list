@@ -1,6 +1,6 @@
 # simple to-do list web app
 in this app you can track your daily tasks
-### [Go Live](https://tadrochlinski.github.io/article-previev-component/)
+### [Go Live](https://tadrochlinski.github.io/simple-todo-list/)
 
 ## Overview
 User is able to 
